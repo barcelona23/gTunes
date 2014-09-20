@@ -1,0 +1,13 @@
+Environmentally Fiendly:
+
+grails prod run-app
+grails test run-app
+grails dev run-app
+
+Deploying the Application
+
+grails run-war
+
+Create a WAR archive
+
+grails war
