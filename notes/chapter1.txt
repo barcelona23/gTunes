@@ -1,0 +1,7 @@
+Grails is powered by some of the most popular open source technologies in their respective categories:
+
+- Hibernate ORM (Object Relational Mapping)
+- Spring IoC (Inversion of Control)
+- SiteMesh Layout-rendering
+- Tomcat Servlet container
+- H2 RDBMS (Relational Database Management System)
