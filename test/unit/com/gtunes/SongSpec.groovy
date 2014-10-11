@@ -17,4 +17,22 @@ class SongSpec extends Specification {
 
     void "test something"() {
     }
+
+    void "testMinimumDuration"() {
+        //set the Song class up for constraints testing ...
+        mockForConstraintsTests(Song)
+
+        //create a new Song
+        def song = new Song(
+            title: 'Some title',
+            artist: 'Some Artist',
+            duration: 0)
+
+        //make sure that validation fails  ...
+        assert !song.validate()
+
+        //make sure that the 'min' constraint failed ...
+        assert 'min' == song.errors['duration']
+
+    }
 }

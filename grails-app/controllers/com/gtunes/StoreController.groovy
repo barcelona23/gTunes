@@ -1,4 +1,4 @@
-package gtunes
+package com.gtunes
 
 class StoreController {
 

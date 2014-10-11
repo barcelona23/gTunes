@@ -1,0 +1,42 @@
+//Validations
+
+login blank : false
+cardNumber creditCard : true
+homeEmail email : true
+inList login inList:['Joe', 'Fred']
+duration min : 1
+children minSize : 5
+login matches : /[a-zA-Z]/
+age max : 99
+children maxSize : 25
+login notEqual : 'Bob'
+age nullable : false
+age range : 16..59
+salary scale : 2
+children size : 5..15
+login unique : true
+homePage url : true
+
+mapping = {
+    table name
+    columns name
+    version false
+    cascade definition
+}
+
+//relations
+belongsTo
+hasOne
+hasMany
+
+//Inheritance
+Grails keep all subclasses into one table
+class column discriminator 'column name'
+
+subtables
+mapping = {
+    tablePerHierarchy false
+}
+
+Merge tables
+static embedded = table
