@@ -1,9 +1,10 @@
 dataSource {
     pooled = true
     jmxExport = true
-    driverClassName = "com.mysql.jdbc.Driver"
-    username = "root"
-    password = ""
+    driverClassName = "org.postgresql.Driver" //com.mysql.jdbc.Driver
+    dialect = "org.hibernate.dialect.PostgreSQLDialect"
+    username = "barcelona"
+    password = "barcelona"
 }
 hibernate {
     cache.use_second_level_cache = true
@@ -18,7 +19,7 @@ environments {
         dataSource {
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
             //url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
-            url = "jdbc:mysql://localhost/gTunes"
+            url = "jdbc:postgresql://localhost:5432/gtunes" //jdbc:mysql://localhost/gTunes
         }
     }
     test {
@@ -30,7 +31,7 @@ environments {
     production {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:mysql://localhost/gTunes"
+            url = "jdbc:mysql://localhost/gtunes"
             properties {
                // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation
                //jmxEnabled = true

@@ -1,0 +1,27 @@
+//Definition action default
+static defaultAction = nameAction
+
+-There already is a Log object in all controllers.
+log.info("this is a log msg example.");
+
+attributes
+actionName = Name of the action
+actionUri = realtive URi
+controllerName = currently executing controller
+controllerUri = URi executing controller
+flash = flash scope
+log = apache.commons.logging
+params = request parameters
+request =
+response =
+session =
+servletContext =
+
+
+scopes
+request = kept currently executing request
+flash = kept current request and next request
+session = kept until user kill it
+servletContext = always
+
+
