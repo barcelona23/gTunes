@@ -3,9 +3,10 @@
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 		<meta name="layout" content="main">
 		<title>gTunes Register</title>
-		<g:javascript library="jquery"/>
+		<g:javascript library="jquery"></g:javascript>
 	</head>
 	<body id="body">
+
         <div class="message notice">
             <h1>Registration</h1>
             <p>Complete the form below to create an account!</p>
@@ -52,4 +53,5 @@
             </div>
 		</g:form>
 	</body>
+	
 </html>

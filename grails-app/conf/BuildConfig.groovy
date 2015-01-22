@@ -44,6 +44,7 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
+        mavenRepo "http://repo.grails.org/grails/core"
     }
 
     dependencies {
@@ -55,7 +56,9 @@ grails.project.dependency.resolution = {
 
     plugins {
         // plugins for the build system only
-        build ":tomcat:7.0.54"
+        if (System.getProperty("noTomcat") == null) {
+            build ":tomcat:7.0.54"
+        }
 
         // plugins for the compile step
         compile ":scaffolding:2.0.3"
@@ -66,6 +69,9 @@ grails.project.dependency.resolution = {
         runtime ":database-migration:1.4.0"
         runtime ":jquery:1.11.1"
         runtime ":resources:1.2.8"
+        compile ":searchable:0.6.9"
+        compile ":rest-client-builder:2.0.3"
+        compile ":mail:1.0.7"
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0.1"
         //runtime ":cached-resources:1.1"

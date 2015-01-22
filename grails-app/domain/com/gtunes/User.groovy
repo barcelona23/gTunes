@@ -2,6 +2,9 @@ package com.gtunes
 
 class User {
 
+    Date dateCreated
+    Date lastUpdated
+
     String login
     String password
     String firstName
@@ -14,14 +17,9 @@ class User {
     }
 
     static constraints = {
-        login blank: false, size: 5..15, matches: /[\S]+/, unique: true
-        password blank: false, size : 5..15, matches: /[\S]+/, validator : { val, obj ->
-            if(val?.equalsIgnoreCase(obj.firstName)){
-                //return false
-                return "password.cannot.be.firstname"
-            }
-        }
-        firstName blank: false
-        lastName blank: false
+        login blank:false, nullable:false,size:5..15,matches:/[\S]+/, unique:true
+        password blank:false,nullable:false, size:5..15,matches:/[\S]+/
+        firstName blank:false, nullable:false
+        lastName blank:false, nullable:false
     }
 }

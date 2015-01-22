@@ -1,3 +1,4 @@
+blog.title='The gTunes Weblog'
 // locations to search for config files that get merged into the main config;
 // config files can be ConfigSlurper scripts, Java properties files, or classes
 // in the classpath in ConfigSlurper format
@@ -118,4 +119,22 @@ log4j = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
+}
+
+beans {
+    albumArtService {
+        artworkRequestUrl = 'http://itunes.apple.com/search?media=music&entity=album&attribute=albumTerm'
+    }
+}
+grails {
+    mail {
+        host = 'smtp.gmail.com'
+        port = 465
+        username = 'yourusername@gmail.com'
+        password = 'yourpassword'
+        props = ['mail.smtp.auth': 'true',
+                 'mail.smtp.socketFactory.port': '465',
+                 'mail.smtp.socketFactory.class': 'javax.net.ssl.SSLSocketFactory',
+                 'mail.smtp.socketFactory.fallback': 'false']
+    }
 }

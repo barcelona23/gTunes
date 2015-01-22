@@ -1,5 +1,7 @@
 package com.gtunes
 
+
+
 import grails.test.mixin.*
 import org.junit.*
 
@@ -72,9 +74,9 @@ class UserControllerTests {
         request.method = 'POST'
 
         def u = new User(login: 'maynard',
-                firstName: 'Maynard',
-                lastName: 'Keenan',
-                password: 'undertow').save()
+                         firstName: 'Maynard',
+                         lastName: 'Keenan',
+                         password: 'undertow').save()
         assert u != null
 
         params.login = 'maynard'
@@ -93,9 +95,9 @@ class UserControllerTests {
         request.method = 'POST'
 
         def u = new User(login: 'maynard',
-                firstName: 'Maynard',
-                lastName: 'Keenan',
-                password: 'undertow').save()
+                         firstName: 'Maynard',
+                         lastName: 'Keenan',
+                         password: 'undertow').save()
         assert u != null
 
         params.login = 'maynard'

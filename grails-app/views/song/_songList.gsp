@@ -1,4 +1,3 @@
-<!-- -->
 <ul class="list">
 	<g:each in="${songs?}" var="song">
 		<li class="icon">

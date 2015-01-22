@@ -15,9 +15,9 @@ class UrlMappings {
             constraints{}
         }
 
-        "/showArtist"(controller: 'artist', action: 'show')
+        //"/showArtist"(controller: 'artist', action: 'show')
 
-        "/showArtist/$artistName"(controller: 'artist', action: 'show')
+        //"/showArtist/$artistName"(controller: 'artist', action: 'show')
 
         "500"(view:'/error')
 	}

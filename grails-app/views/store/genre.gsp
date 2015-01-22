@@ -3,7 +3,7 @@
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta name="layout" content="main">
     <title>gTunes Store</title>
-    <g:javascript library="jquery"></g:javascript>
+    <g:javascript library="jquery"/>
 </head>
 
 <body id="body">
