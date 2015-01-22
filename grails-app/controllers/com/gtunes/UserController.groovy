@@ -1,6 +1,7 @@
 package com.gtunes
 
 class UserController {
+
 	def login(LoginCommand cmd) {
 		if(request.method == 'POST') {
 			if(!cmd.hasErrors()) {
@@ -41,6 +42,7 @@ class UserController {
 }
 
 class LoginCommand {
+
 	String login
 	String password
 	private u

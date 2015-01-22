@@ -1,7 +1,8 @@
 package com.gtunes
 
 class AlbumController {
-	def index() {}
+
+    def index() {}
 
     def show() {
         def album = Album.get(params.id)
@@ -21,4 +22,5 @@ class AlbumController {
             render 'Album not found.'
         }
     }
+
 }

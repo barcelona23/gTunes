@@ -1,16 +1,19 @@
 package com.gtunes
 
 class Album implements Serializable{
-    static searchable = [only: ['genre', 'title']]
+
+    Date dateCreated
+    Date lastUpdated
 
     String title
     Integer year
     String genre
-    static hasMany = [songs: Song]
-    static belongsTo = [artist: Artist]
     List songs
 
-    Date dateCreated
+    static hasMany = [songs: Song]
+    static belongsTo = [artist: Artist]
+
+    static searchable = [only: ['genre', 'title']]
 
     static constraints = {
         title blank:false

@@ -1,8 +1,6 @@
 package com.gtunes
 
-class Song {
-
-    static searchable = [only: ['genre', 'title']]
+class Song implements Serializable{
 
     Date dateCreated
     Date lastUpdated
@@ -13,7 +11,10 @@ class Song {
     Integer trackNumber
     Integer duration
     Artist artist
+
     static belongsTo = [album: Album]
+
+    static searchable = [only: ['genre', 'title']]
 
     static constraints = {
         title blank:false
