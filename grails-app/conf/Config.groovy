@@ -133,7 +133,7 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 
-    trace "org.hibernate.SQL"//, "org.hibernate.type"
+    //trace "org.hibernate.SQL"//, "org.hibernate.type"
 }
 
 beans {
