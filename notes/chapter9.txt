@@ -1,0 +1,43 @@
+Methods
+
+.get()
+.getAll()
+.read() //only read
+
+.list() //max, offset, sort, order
+.count()
+.listOrderBy*()
+
+.save() //insert:true
+.addTo*()
+
+.delete()
+
+.findBy*And*() //and, or, not
+.findBy*Like('%*%')
+.findBy*Ilike('%*%')
+.findBy*Rlike('%*%')
+.findBy*Between(today-10,*)
+.findBy*NotEqual('*')
+.findBy*Equals('*')
+.findBy*GreaterThan('*')
+.findBy*GreaterThanOrEqual('*')
+.findBy*InList(['*','*'])
+.findBy*IsNul()
+.findBy*IsNotNul()
+.findBy*LessThan('*')
+.findBy*LessThanOrEqual('*')
+
+.findAllBy*()
+.countBy*()
+
+def c *.createCriteria()
+def results = c.list{ // .get. .list, .scroll, .count
+    eq()
+    between()
+    https://docs.jboss.org/hibernate/core/3.6/javadocs/org/hibernate/criterion/Restrictions.html
+}
+
+def q = new DetachedCriteria(*).build{
+    eq "genre", "Reggae"
+}

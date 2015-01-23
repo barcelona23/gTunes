@@ -8,7 +8,9 @@ class Album implements Serializable{
     String title
     Integer year
     String genre
-    List songs
+
+    //List songs //allows duplicates
+    SortedSet songs
 
     static hasMany = [songs: Song]
     static belongsTo = [artist: Artist]
@@ -18,6 +20,11 @@ class Album implements Serializable{
     static constraints = {
         title blank:false
         year range:1900..2100
+    }
+
+    // this or implement Comparable interface
+    static mapping = {
+        //songs sort: "trackNumber"
     }
 
     String toString() { title }

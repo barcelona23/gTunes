@@ -1,6 +1,6 @@
 package com.gtunes
 
-class Song implements Serializable{
+class Song implements Comparable{
 
     Date dateCreated
     Date lastUpdated
@@ -20,6 +20,19 @@ class Song implements Serializable{
         title blank:false
         duration(min:1)
         year range:1900..2100
+    }
+
+    static mapping = {
+        sort "trackNumber"
+    }
+    // or
+    int compareTo(o){
+        if (this.trackNumber > o.trackNumber){
+            return 1
+        } else if(this.trackNumber < o.trackNumber){
+            return -1
+        }
+        return 0
     }
 
     String toString() { title }

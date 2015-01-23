@@ -100,6 +100,19 @@ environments {
     }
 }
 
+grails.gorm.default.mapping = {
+    //These will become default mapping setting for all domain classes.
+    //These settings may be overridden in the mapping block of any domain class.
+    version false
+    //autoTimestamp false
+}
+
+//grails.gorm.default.constraints = {
+//    nullable true
+//    blank false
+//    size 1..20
+//}
+
 // log4j configuration
 log4j = {
     // Example of changing the log pattern for the default console appender:
@@ -119,6 +132,8 @@ log4j = {
            'org.springframework',
            'org.hibernate',
            'net.sf.ehcache.hibernate'
+
+    trace "org.hibernate.SQL"//, "org.hibernate.type"
 }
 
 beans {
