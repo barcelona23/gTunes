@@ -1,11 +1,12 @@
 package com.gtunes
 
-import grails.plugin.cache.Cacheable
 import grails.plugins.rest.client.RestBuilder
+import grails.plugin.cache.Cacheable
 
 class AlbumArtService {
 
     static transactional = false
+
     static final DEFAULT_ALBUM_ART_IMAGE =  "/images/no-album-art.gif"
 
     String artworkRequestUrl

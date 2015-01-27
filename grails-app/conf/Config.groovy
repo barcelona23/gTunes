@@ -137,7 +137,7 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate']
 
-    trace myLog: "org.hibernate.SQL"//, "org.hibernate.type"
+    //trace myLog: "org.hibernate.SQL"//, "org.hibernate.type"
 }
 
 beans {
@@ -145,12 +145,13 @@ beans {
         artworkRequestUrl = 'http://itunes.apple.com/search?media=music&entity=album&attribute=albumTerm'
     }
 }
+
 grails {
     mail {
         host = 'smtp.gmail.com'
         port = 465
-        username = 'barcelona23@gmail.com'
-        password = 'ney$23FCB'
+        username = 'xxxxxxx'
+        password = 'xxxxx'
         props = ['mail.smtp.auth': 'true',
                  'mail.smtp.socketFactory.port': '465',
                  'mail.smtp.socketFactory.class': 'javax.net.ssl.SSLSocketFactory',

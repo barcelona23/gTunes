@@ -5,7 +5,7 @@ dataSource {
     dialect = "org.hibernate.dialect.PostgreSQLDialect"
     username = "barcelona"
     password = "barcelona"
-    logSql = true
+    //logSql = true
 }
 hibernate {
     cache.use_second_level_cache = true

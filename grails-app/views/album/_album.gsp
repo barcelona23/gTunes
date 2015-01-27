@@ -1,7 +1,8 @@
 <div id="album${album.id}" class="album" style="display: none;">
 	<div class="albumDetails">
         <div class="albumArt">
-            <music:albumArt artist="${artist}" album="${album}"/>
+            %{--<music:albumArt width="200" artist="${artist}" album="${album}"/>--}%
+            <img src="${album.art}" alt="gTunes" width="200" height="200"/>
         </div>
 		<div class="artistName">${artist.name} (${album.year})</div>
 		<div class="albumInfo">
