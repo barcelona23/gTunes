@@ -20,13 +20,23 @@ class UserController {
 	def register() {
 		if(request.method == 'POST') {
 			def u = new User()
-            u.properties['login', 'password', 'firstName', 'lastName'] = params
+            u.properties['login', 'password', 'firstName', 'lastName', 'email'] = params
 			if(u.password != params.confirm) {
 				u.errors.rejectValue("password", "user.password.dontmatch")
 				return [user:u]
 			}
 			else if(u.save()) {
 				session.user = u
+				try {
+					sendMail {
+						to u.email
+						subject 'Registration Confirmation'
+						body view: '/emails/confirmRegistration',
+								model: [user: u]
+					}
+				} catch (Exception e) {
+					log.error "Problem sending email ${e.message}", e
+				}
 				redirect controller:"store"
 			}
 			else {

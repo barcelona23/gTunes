@@ -47,7 +47,14 @@
                 <g:hasErrors  bean="${user}" field="lastName">
                     <p class="error"><g:fieldError bean="${user}" field="lastName" /></p>
                 </g:hasErrors>
-			</div>
+            </div>
+            <div class="input clearfix">
+                <label for="email">Email <span class="required">*</span></label>
+                <g:textField required="true" name="email" value="${user?.email}" />
+                <g:hasErrors  bean="${user}" field="email">
+                    <p class="error"><g:fieldError bean="${user}" field="email" /></p>
+                </g:hasErrors>
+            </div>
             <div class="submit">
                 <g:submitButton class="btn" name="register" value="Register" />
             </div>

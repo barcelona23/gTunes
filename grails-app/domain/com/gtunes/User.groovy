@@ -9,6 +9,7 @@ class User {
     String password
     String firstName
     String lastName
+    String email
 
     static hasMany = [purchasedSongs:Song]
 
@@ -21,5 +22,6 @@ class User {
         password blank:false,nullable:false, size:5..15,matches:/[\S]+/
         firstName blank:false, nullable:false
         lastName blank:false, nullable:false
+        email email: true, blank: false, unique: true
     }
 }

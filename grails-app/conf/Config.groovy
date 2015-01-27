@@ -93,10 +93,11 @@ grails.hibernate.osiv.readonly = false
 environments {
     development {
         grails.logging.jul.usebridge = true
+        //grails.serverURL = "http://localhost:2323"
     }
     production {
         grails.logging.jul.usebridge = false
-        // TODO: grails.serverURL = "http://www.changeme.com"
+        // TODO: grails.serverURL = "http://www.gtunes.com"
     }
 }
 
@@ -116,12 +117,15 @@ grails.gorm.default.mapping = {
 // log4j configuration
 log4j = {
     // Example of changing the log pattern for the default console appender:
-    //
-    //appenders {
-    //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
-    //}
 
-    error  'org.codehaus.groovy.grails.web.servlet',        // controllers
+    appenders {
+        //console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
+        rollingFile name:"myLog",
+        file:"/var/log/gtunes/gtunes.log", maxFileSize:"1MB",
+        layout: pattern(conversionPattern: '%c{2} %m%n')
+    }
+
+    error myLog: ['org.codehaus.groovy.grails.web.servlet',        // controllers
            'org.codehaus.groovy.grails.web.pages',          // GSP
            'org.codehaus.groovy.grails.web.sitemesh',       // layouts
            'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
@@ -131,9 +135,9 @@ log4j = {
            'org.codehaus.groovy.grails.orm.hibernate',      // hibernate integration
            'org.springframework',
            'org.hibernate',
-           'net.sf.ehcache.hibernate'
+           'net.sf.ehcache.hibernate']
 
-    //trace "org.hibernate.SQL"//, "org.hibernate.type"
+    trace myLog: "org.hibernate.SQL"//, "org.hibernate.type"
 }
 
 beans {
@@ -145,8 +149,8 @@ grails {
     mail {
         host = 'smtp.gmail.com'
         port = 465
-        username = 'yourusername@gmail.com'
-        password = 'yourpassword'
+        username = 'barcelona23@gmail.com'
+        password = 'ney$23FCB'
         props = ['mail.smtp.auth': 'true',
                  'mail.smtp.socketFactory.port': '465',
                  'mail.smtp.socketFactory.class': 'javax.net.ssl.SSLSocketFactory',
